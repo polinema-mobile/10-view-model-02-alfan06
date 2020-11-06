@@ -1,23 +1,19 @@
 package id.putraprima.mvvmlogin.fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.os.Handler;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import id.putraprima.mvvmlogin.R;
 import id.putraprima.mvvmlogin.databinding.FragmentSplashBinding;
 
 public class SplashFragment extends Fragment {
-    Handler handler;
-    FragmentSplashBinding binding;
+    private int waktu_loading=3000;
 
     public SplashFragment() {
         // Required empty public constructor
@@ -31,6 +27,6 @@ public class SplashFragment extends Fragment {
             public void run() {
                 Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_loginFragment);
             }
-        },3000);
+        },waktu_loading);
     }
 }

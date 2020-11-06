@@ -30,11 +30,23 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         FragmentLoginBinding binding = DataBindingUtil.inflate(inflater,R.layout.fragment_login, container, false);
-        LoginViewModelFactory viewModelLoginFactory = new LoginViewModelFactory(new User("alizarizqi@gmail.com","aliza"));
-        loginVieModels = new ViewModelProvider(this, viewModelLoginFactory).get(LoginViewModels.class);
+        LoginViewModelFactory loginViewModelFactory = new LoginViewModelFactory(new User("",""));
+        loginVieModels = new ViewModelProvider(this, loginViewModelFactory).get(LoginViewModels.class);
         View view = binding.getRoot();
-        binding.setViewModel(loginVieModels);
+        binding.setUser(loginVieModels);
         binding.setLifecycleOwner(this);
+        binding.btnLogin.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                if(loginVieModels.login()){
+                    Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment);
+                }else{
+                    binding.editTextEmail.setError("salah");
+                    binding.editTextPassword.setError("salah");
+                }
+            }
+        });
         return view;
     }
 }

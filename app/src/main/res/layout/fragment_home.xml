@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="user"
+            type="id.putraprima.mvvmlogin.viewmodels.HomeViewModels" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
