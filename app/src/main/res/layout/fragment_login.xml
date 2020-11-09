@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="user"
+            name="userModel"
             type="id.putraprima.mvvmlogin.viewmodels.LoginViewModels" />
     </data>
 
@@ -35,6 +35,7 @@
             android:layout_marginEnd="8dp"
             android:ems="10"
             android:hint="Email"
+            android:text="@={userModel.username}"
             android:inputType="textEmailAddress"
             app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +47,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Password"
+            android:text="@={userModel.password}"
             android:inputType="textPassword"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"

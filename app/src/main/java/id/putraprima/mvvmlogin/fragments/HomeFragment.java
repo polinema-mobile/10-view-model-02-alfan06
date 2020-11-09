@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         FragmentHomeBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
         View view = binding.getRoot();
-        binding.setUser(homeVieModel);
+//        binding.textView.setText(getArguments().getString("username"));
         binding.setLifecycleOwner(this);
         return view;
     }

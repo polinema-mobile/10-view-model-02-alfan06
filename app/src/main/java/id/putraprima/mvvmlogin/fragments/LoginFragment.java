@@ -19,7 +19,7 @@ import id.putraprima.mvvmlogin.models.User;
 
 
 public class LoginFragment extends Fragment {
-    private LoginViewModels loginVieModels;
+
     public LoginFragment() {
         // Required empty public constructor
     }
@@ -30,10 +30,10 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         FragmentLoginBinding binding = DataBindingUtil.inflate(inflater,R.layout.fragment_login, container, false);
-        LoginViewModelFactory loginViewModelFactory = new LoginViewModelFactory(new User("",""));
-        loginVieModels = new ViewModelProvider(this, loginViewModelFactory).get(LoginViewModels.class);
+        LoginViewModelFactory loginViewModelFactory = new LoginViewModelFactory(new User("alfannoufal@gmail.com","alfan12"));
+        LoginViewModels loginVieModels = new ViewModelProvider(this, loginViewModelFactory).get(LoginViewModels.class);
         View view = binding.getRoot();
-        binding.setUser(loginVieModels);
+        binding.setUserModel(loginVieModels);
         binding.setLifecycleOwner(this);
         binding.btnLogin.setOnClickListener(new View.OnClickListener(){
 
